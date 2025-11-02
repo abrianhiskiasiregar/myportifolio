@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tampilanawal.css">
+</head>
+<body>
+    <div id="Register" class="tabcontent">
+        <form id="registerForm">
+            <h2>Register</h2>
+            <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="registerEmail" aria-describedby="registerEmailHelp">
+                <div id="registerEmailHelp" class="form-text">Enter your Email</div>
+            </div>
+            <div class="mb-3">
+                <label for="registerPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registerPassword">
+            </div>
+            <div class="mb-3">
+                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="registerConfirmPassword">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('registerEmail').value;
+            const passwordInput = document.getElementById('registerPassword').value;
+            const confirmPasswordInput = document.getElementById('registerConfirmPassword').value;
+
+            if (passwordInput === confirmPasswordInput) {
+                const userData = {
+                    email: emailInput,
+                    password: passwordInput
+                };
+
+                localStorage.setItem(emailInput, JSON.stringify(userData));
+                alert('Registration successful');
+                // Optionally, you can also log the user in right after registration:
+                window.location.href = 'tampilanawal.html';
+            } else {
+                alert('Passwords do not match');
+            }
+        });
+
+        function openForm(evt, formName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Open the default tab (Login tab)
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
+</html>

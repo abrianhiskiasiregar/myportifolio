@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Awal</title>
+    <link rel="stylesheet" href="tampilanawal.css">
+</head>
+<body>
+
+    <div id="Login" class="tabcontent">
+        <form id="loginForm">
+            <h2>Please <span id="loginfirst">Login First</span></h2>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Enter the Registered Email</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <p>Click Register to create your account</p>
+        <div class="tab">
+            <button class="tablinks" onclick="window.location.href='register.html'" id="defaultOpen">Register</button>
+         </div>
+    </div>
+
+
+    <script>
+        const spanElement = document.getElementById('loginfirst');
+        const colors = ['blue', 'green', 'brown', 'purple', 'orange']; 
+        let currentIndex = 0;
+
+        function changeColor() {
+            spanElement.style.color = colors[currentIndex]; 
+            currentIndex = (currentIndex + 1) % colors.length; 
+        }
+
+        setInterval(changeColor, 1000); 
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('exampleInputEmail1').value;
+            const passwordInput = document.getElementById('exampleInputPassword1').value;
+
+            const storedUser = JSON.parse(localStorage.getItem(emailInput));
+
+            if (storedUser && storedUser.password === passwordInput) {
+                alert('Login successful');
+                window.location.href = 'Index.html';
+            } else {
+                alert('You are not Registered Yet');
+                window.location.href = 'tampilanawal.html';
+            }
+        });
+    </script>
+</body>
+</html>

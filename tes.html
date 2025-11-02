@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Info Teknologi — Ringkas & Update</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent: #0ea5a4;
+        --glass: rgba(255, 255, 255, 0.6);
+        --radius: 12px;
+        --maxw: 900px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        margin: 0;
+        color: #0f172a;
+        display: flex;
+        justify-content: center;
+        padding: 28px;
+      }
+      .wrap {
+        width: 100%;
+        max-width: var(--maxw);
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #06b6d4, #7c3aed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      p.lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .search {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid #e6eef5;
+        background: var(--card);
+      }
+      .btn {
+        background: var(--accent);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 14px;
+        box-shadow: 0 6px 18px rgba(10, 15, 25, 0.04);
+      }
+      .article {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .thumb {
+        width: 120px;
+        height: 80px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #eef2ff, #f0f9ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #334155;
+        font-weight: 600;
+      }
+      .meta {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .title {
+        margin: 6px 0 4px 0;
+        font-size: 16px;
+      }
+      .excerpt {
+        font-size: 14px;
+        color: #334155;
+      }
+
+      aside .card {
+        position: sticky;
+        top: 24px;
+      }
+      .subscribe input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #e6eef5;
+      }
+      .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .tag {
+        font-size: 13px;
+        background: var(--glass);
+        padding: 6px 8px;
+        border-radius: 999px;
+      }
+
+      footer {
+        margin-top: 18px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* responsive */
+      @media (max-width: 800px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+        .thumb {
+          width: 100px;
+          height: 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">IT</div>
+          <div>
+            <h1>InfoTek — Update Teknologi Ringkas</h1>
+            <p class="lead">
+              Berita, panduan, dan alat singkat untuk developer & tech curious
+            </p>
+          </div>
+        </div>
+        <div class="controls">
+          <input
+            class="search"
+            placeholder="Cari artikel, topik, atau kata kunci..."
+          />
+          <button
+            class="btn"
+            onclick="alert('Terima kasih sudah berlangganan demo!')"
+          >
+            Langganan
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <div class="card">
+            <h2 style="margin-top: 0">Artikel Terbaru</h2>
+            <!-- Article 1 -->
+            <article class="article" style="margin-top: 10px">
+              <div class="thumb">AI</div>
+              <div>
+                <div class="meta">12 Okt 2025 · Kecerdasan Buatan</div>
+                <h3 class="title">
+                  Mengenal Model Generatif: Cara Kerjanya & Aplikasinya
+                </h3>
+                <p class="excerpt">
+                  Model generatif (seperti transformer) mampu membuat teks,
+                  gambar, dan suara. Artikel ini membahas konsep inti, risiko,
+                  dan contoh penerapan di industri.
+                </p>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article">
+              <div class="thumb">Web</div>
+              <div>
+                <div class="meta">4 Okt 2025 · Pengembangan Web</div>
+                <h3 class="title">
+                  Progressive Web Apps: Saatnya Aplikasi Web Lebih Cepat
+                </h3>
+                <p class="excerpt">
+                  PWA menggabungkan kecepatan web dengan pengalaman aplikasi:
+                  offline, installable, dan responsif. Panduan singkat setup PWA
+                  untuk projekmu.
+                </p>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article">
+              <div class="thumb">Cloud</div>
+              <div>
+                <div class="meta">21 Sep 2025 · Infrastruktur</div>
+                <h3 class="title">Biaya Cloud & Optimasi: 5 Langkah Hemat</h3>
+                <p class="excerpt">
+                  Tips cepat mengurangi tagihan cloud tanpa mengorbankan
+                  performa: autoscaling, spot instances, dan observability.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="card" style="margin-top: 12px">
+            <h3 style="margin-top: 0">Panduan Singkat</h3>
+            <ol style="padding-left: 18px; margin: 8px 0 0 0">
+              <li>Mulai dari tujuan — buat proyek kecil yang terukur.</li>
+              <li>
+                Pilih stack yang familiar, jangan terburu-buru gonta-ganti.
+              </li>
+              <li>Automasi deployment (CI/CD) sejak awal.</li>
+              <li>Catat keputusan arsitektur & alasan teknisnya.</li>
+              <li>Terus eksperimen, baca changelog, dan ikut komunitas.</li>
+            </ol>
+          </div>
+        </section>
+
+        <aside>
+          <div class="card subscribe">
+            <h3>Newsletter</h3>
+            <p class="meta">Dapatkan ringkasan mingguan.</p>
+            <input placeholder="Email kamu" id="email" />
+            <button
+              class="btn"
+              style="width: 100%; margin-top: 8px"
+              onclick="subscribe()"
+            >
+              Daftar
+            </button>
+          </div>
+
+          <div class="card" style="margin-top: 12px">
+            <h3>Topik Populer</h3>
+            <div class="tags" style="margin-top: 8px">
+              <span class="tag">AI</span>
+              <span class="tag">Web Dev</span>
+              <span class="tag">Cloud</span>
+              <span class="tag">Security</span>
+              <span class="tag">Mobile</span>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 12px">
+            <h3>Tautan Cepat</h3>
+            <ul>
+              <li><a href="#">Tutorial Deploy</a></li>
+              <li><a href="#">Cheatsheet Git</a></li>
+              <li><a href="#">Alat Online</a></li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        © 2025 InfoTek — Contoh halaman sederhana untuk belajar HTML/CSS. Dibuat
+        cepat untuk demo.
+      </footer>
+    </div>
+
+    <script>
+      function subscribe() {
+        const email = document.getElementById("email").value;
+        if (!email || !email.includes("@")) {
+          alert("Masukkan email yang valid.");
+          return;
+        }
+        alert("Terima kasih! (" + email + ") — Ini demo notifikasi.");
+      }
+    </script>
+  </body>
+</html>
